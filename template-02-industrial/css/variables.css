@@ -1,0 +1,100 @@
+/**
+ * Template 02 — Industrial Utilitarian (Premium SaaS)
+ * Design tokens: dark sidebar, amber accent, monospace labels, 8px grid
+ */
+
+:root {
+  /* Colors — cool gray base, amber accent */
+  --color-bg-base: #f4f4f5;
+  --color-bg-surface: #ffffff;
+  --color-text-primary: #09090b;
+  --color-text-secondary: #3f3f46;
+  --color-text-muted: #71717a;
+  --color-border: #e4e4e7;
+  --color-accent: #d97706;
+  --color-accent-muted: rgba(217, 119, 6, 0.12);
+  --color-sidebar-bg: #18181b;
+  --color-sidebar-bg-pattern: linear-gradient(180deg, #18181b 0%, #0f0f11 100%);
+  --color-sidebar-hover: #27272a;
+  --color-sidebar-active-bg: #27272a;
+  --color-sidebar-active-bar: #f59e0b;
+  --color-sidebar-text: #fafafa;
+  --color-sidebar-text-muted: #a1a1aa;
+  --color-navbar-border: #e4e4e7;
+  --color-overlay: rgba(0, 0, 0, 0.55);
+  --color-border-light: #e4e4e7;
+  --color-bg-elevated: #ffffff;
+  --color-bg-filter: #fafafa;
+
+  /* Semantic — status / AI badges (Applications) */
+  --color-status-new: #71717a;
+  --color-status-active: #0ea5e9;
+  --color-status-success: #16a34a;
+  --color-status-warning: #d97706;
+  --color-status-danger: #dc2626;
+  --color-status-rejected: #94a3b8;
+  --color-ai-score-high: #16a34a;
+  --color-ai-score-mid: #d97706;
+  --color-ai-score-low: #dc2626;
+  --color-ai-score-zero: #b91c1c;
+
+  /* Typography */
+  --font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  --font-size-xs: 0.6875rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --letter-spacing-wide: 0.04em;
+
+  /* Spacing — 8px grid, tighter */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  /* Layout */
+  --navbar-height: 56px;
+  --sidebar-width: 268px;
+  --sidebar-width-collapsed: 72px;
+  --main-max-width: 1400px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  /* Palette background — design-tool inspired */
+  --palette-strip-height: 6px;
+  --palette-color-1: #18181b;
+  --palette-color-2: #3f3f46;
+  --palette-color-3: #71717a;
+  --palette-color-4: #d97706;
+  --palette-color-5: #f59e0b;
+  --grid-dot-size: 1.25px;
+  --grid-dot-gap: 28px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(9, 9, 11, 0.06), 0 2px 6px rgba(9, 9, 11, 0.04);
+  --shadow-card-hover: 0 8px 24px rgba(9, 9, 11, 0.1), 0 2px 8px rgba(9, 9, 11, 0.06);
+  --shadow-card-surface: 0 0 0 1px rgba(9, 9, 11, 0.04);
+  --shadow-dropdown: 0 8px 24px rgba(9, 9, 11, 0.14);
+
+  /* Transitions */
+  --transition-duration: 200ms;
+  --transition-ease: cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* Breakpoints */
+  --bp-sm: 600px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}

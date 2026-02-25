@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Detail — KubeHire Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="navbar" role="banner">
+      <div class="navbar__left">
+        <button type="button" class="navbar__menu-btn" aria-expanded="false" aria-controls="sidebar" id="menu-btn" aria-label="Toggle menu">
+          <span class="navbar__menu-btn-icon" aria-hidden="true">☰</span>
+        </button>
+        <a href="../applications/index.html" class="navbar__logo">KubeHire</a>
+      </div>
+      <div class="navbar__right">
+        <div class="navbar__user">
+          <button type="button" class="navbar__user-trigger" aria-expanded="false" aria-controls="user-dropdown" id="user-trigger">
+            <span class="navbar__avatar" aria-hidden="true">JD</span>
+            <span class="navbar__user-name">Jane Doe</span>
+          </button>
+          <div class="navbar__dropdown" id="user-dropdown" role="menu">
+            <a href="#" class="navbar__dropdown-item" role="menuitem">Profile</a>
+            <a href="#" class="navbar__dropdown-item" role="menuitem">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="app__body sidebar-expanded" id="app-body">
+      <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="sidebar__nav">
+          <a href="../" class="sidebar__item">
+            <span class="sidebar__icon" aria-hidden="true">▣</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="sidebar__item">
+            <span class="sidebar__icon" aria-hidden="true">◇</span>
+            <span>Jobs</span>
+          </a>
+          <a href="../applications/index.html" class="sidebar__item sidebar__item--active" aria-current="page">
+            <span class="sidebar__icon" aria-hidden="true">◎</span>
+            <span>Applications</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content" id="main-content">
+        <div class="main-content__inner">
+          <header class="detail-header" id="detail-header" aria-label="Application summary and actions">
+            <div class="detail-header__info">
+              <h1 class="detail-header__name" id="detail-header-name">—</h1>
+              <p class="detail-header__job" id="detail-header-job">—</p>
+              <div class="detail-header__meta">
+                <span class="ai-score-badge detail-header__ai" id="detail-header-ai">—</span>
+                <label class="visually-hidden" for="detail-status">Status</label>
+                <select id="detail-status" class="detail-header__select" aria-label="Application status"></select>
+                <label class="visually-hidden" for="detail-assignee">Assignee</label>
+                <select id="detail-assignee" class="detail-header__select" aria-label="Assignee"></select>
+              </div>
+            </div>
+            <div class="detail-header__actions">
+              <button type="button" class="btn btn--secondary" id="action-view-resume" aria-label="View resume">View Resume</button>
+              <button type="button" class="btn btn--ghost star-btn" id="action-star" aria-label="Star application">☆</button>
+              <button type="button" class="btn btn--ghost" id="action-mark-invalid">Mark Invalid</button>
+              <button type="button" class="btn btn--primary" id="action-move-next">Move to Next Round</button>
+              <button type="button" class="btn btn--danger" id="action-reject">Reject</button>
+            </div>
+          </header>
+
+          <div class="detail-banner detail-banner--locked" id="detail-banner-locked" role="alert" hidden>
+            This application is closed. Reopen to make changes.
+          </div>
+
+          <div class="detail-columns">
+            <div class="detail-column detail-column--left">
+              <section class="card detail-card" id="card-overview">
+                <h2 class="card__title">Candidate Overview</h2>
+                <div class="card__body" id="card-overview-body"></div>
+              </section>
+              <section class="card detail-card" id="card-ai">
+                <h2 class="card__title">AI Insights</h2>
+                <div class="card__body" id="card-ai-body"></div>
+              </section>
+              <section class="card detail-card" id="card-work">
+                <h2 class="card__title">Work Experience</h2>
+                <div class="card__body" id="card-work-body"></div>
+              </section>
+              <section class="card detail-card" id="card-projects">
+                <h2 class="card__title">Projects</h2>
+                <div class="card__body" id="card-projects-body"></div>
+              </section>
+              <section class="card detail-card" id="card-education">
+                <h2 class="card__title">Education</h2>
+                <div class="card__body" id="card-education-body"></div>
+              </section>
+              <section class="card detail-card" id="card-notes">
+                <div class="card__header-row">
+                  <h2 class="card__title">Interview Notes</h2>
+                  <button type="button" class="btn btn--primary btn--sm" id="action-add-note">+ Add Note</button>
+                </div>
+                <div class="card__body">
+                  <div class="notes-table-wrap">
+                    <table class="notes-table" id="notes-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Author</th>
+                          <th scope="col">Note</th>
+                        </tr>
+                      </thead>
+                      <tbody id="notes-tbody"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="detail-column detail-column--right">
+              <section class="card detail-card" id="card-meta">
+                <h2 class="card__title">Application Metadata</h2>
+                <div class="card__body" id="card-meta-body"></div>
+              </section>
+              <section class="card detail-card" id="card-stepper">
+                <h2 class="card__title">Status Timeline</h2>
+                <div class="card__body">
+                  <div class="stepper" id="status-stepper"></div>
+                </div>
+              </section>
+              <section class="card detail-card" id="card-interview-history">
+                <h2 class="card__title">Interview History</h2>
+                <div class="card__body">
+                  <div class="interview-history" id="interview-history"></div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="detail-loading" id="detail-loading">Loading application…</div>
+          <div class="detail-error" id="detail-error" hidden>
+            <p class="detail-error__message" id="detail-error-message"></p>
+            <a href="../applications/index.html" class="btn btn--secondary">Back to Applications</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-body">
+    <div class="modal" id="modal">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-title"></h2>
+        <button type="button" class="modal__close" id="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal__body" id="modal-body" role="document"></div>
+      <div class="modal__footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true">
+    <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="drawer__header">
+        <h2 class="drawer__title" id="drawer-title">Add Interview Note</h2>
+        <button type="button" class="drawer__close" id="drawer-close" aria-label="Close drawer">&times;</button>
+      </div>
+      <div class="drawer__body">
+        <form id="drawer-note-form">
+          <label for="drawer-note-author">Author</label>
+          <input type="text" id="drawer-note-author" class="drawer__input" required>
+          <label for="drawer-note-content">Note</label>
+          <textarea id="drawer-note-content" class="drawer__textarea" rows="4" required></textarea>
+        </form>
+      </div>
+      <div class="drawer__footer">
+        <button type="button" class="btn btn--ghost" id="drawer-cancel">Cancel</button>
+        <button type="button" class="btn btn--primary" id="drawer-submit">Save Note</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

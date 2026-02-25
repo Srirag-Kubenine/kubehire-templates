@@ -1,0 +1,88 @@
+/**
+ * Template 01 — Refined Minimal (Premium SaaS)
+ * Design tokens: warm neutral palette, distinctive typography, soft depth
+ */
+
+:root {
+  /* Colors — warm neutral base, teal accent */
+  --color-bg-base: #f8f7f4;
+  --color-bg-surface: #ffffff;
+  --color-bg-elevated: #ffffff;
+  --color-text-primary: #1c1b19;
+  --color-text-secondary: #4a4845;
+  --color-text-muted: #787572;
+  --color-border-light: #ebeae7;
+  --color-border: #e2e1de;
+  --color-accent: #0d9488;
+  --color-accent-muted: rgba(13, 148, 136, 0.12);
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-active-bg: rgba(13, 148, 136, 0.08);
+  --color-sidebar-active-border: #0d9488;
+  --color-overlay: rgba(28, 27, 25, 0.35);
+
+  /* Semantic — status / AI badges (Applications) */
+  --color-bg-filter: #f5f4f2;
+  --color-status-new: #78716c;
+  --color-status-active: #0d9488;
+  --color-status-success: #059669;
+  --color-status-warning: #d97706;
+  --color-status-danger: #dc2626;
+  --color-status-rejected: #a8a29e;
+  --color-ai-score-high: #059669;
+  --color-ai-score-mid: #d97706;
+  --color-ai-score-low: #dc2626;
+  --color-ai-score-zero: #b91c1c;
+
+  /* Typography */
+  --font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-display: "Syne", var(--font-family);
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.02em;
+
+  /* Spacing — 8px grid */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  /* Layout */
+  --navbar-height: 60px;
+  --sidebar-width: 280px;
+  --sidebar-width-desktop: 280px;
+  --main-max-width: 1400px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  /* Shadows — soft, layered */
+  --shadow-subtle: 0 1px 2px rgba(28, 27, 25, 0.04);
+  --shadow-card: 0 2px 8px rgba(28, 27, 25, 0.06), 0 1px 2px rgba(28, 27, 25, 0.04);
+  --shadow-card-hover: 0 12px 32px rgba(28, 27, 25, 0.08), 0 4px 8px rgba(28, 27, 25, 0.04);
+  --shadow-dropdown: 0 8px 24px rgba(28, 27, 25, 0.12), 0 2px 6px rgba(28, 27, 25, 0.06);
+
+  /* Transitions */
+  --transition-duration: 220ms;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --stagger-delay: 50ms;
+
+  /* Breakpoints */
+  --bp-sm: 600px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}

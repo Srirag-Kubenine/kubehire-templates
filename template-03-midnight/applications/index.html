@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications — KubeHire Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="navbar" role="banner">
+      <div class="navbar__left">
+        <button type="button" class="navbar__menu-btn" aria-expanded="false" aria-controls="sidebar" id="menu-btn" aria-label="Toggle menu">
+          <span class="navbar__menu-btn-icon" aria-hidden="true">☰</span>
+        </button>
+        <a href="../" class="navbar__logo">KubeHire</a>
+      </div>
+      <div class="navbar__right">
+        <div class="navbar__user">
+          <button type="button" class="navbar__user-trigger" aria-expanded="false" aria-controls="user-dropdown" id="user-trigger">
+            <span class="navbar__avatar" aria-hidden="true">JD</span>
+            <span class="navbar__user-name">Jane Doe</span>
+          </button>
+          <div class="navbar__dropdown" id="user-dropdown" role="menu">
+            <a href="#" class="navbar__dropdown-item" role="menuitem">Profile</a>
+            <a href="#" class="navbar__dropdown-item" role="menuitem">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="app__body">
+      <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="sidebar__nav">
+          <a href="../" class="sidebar__item">
+            <span class="sidebar__icon" aria-hidden="true">▣</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="sidebar__item">
+            <span class="sidebar__icon" aria-hidden="true">◇</span>
+            <span>Jobs</span>
+          </a>
+          <a href="index.html" class="sidebar__item sidebar__item--active">
+            <span class="sidebar__icon" aria-hidden="true">◎</span>
+            <span>Applications</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content" id="main-content">
+        <div class="main-content__inner">
+          <header class="page-header">
+            <div class="page-header__left">
+              <p class="page-header__breadcrumb">Home / Applications</p>
+              <h1 class="page-header__title">Applications</h1>
+            </div>
+            <div class="page-header__actions">
+              <button type="button" class="btn btn--ghost" id="save-filter-view">Save Filter View</button>
+              <button type="button" class="btn btn--secondary" id="export-csv">Export CSV</button>
+              <button type="button" class="btn btn--primary" id="add-application">Add Application</button>
+            </div>
+          </header>
+
+          <div class="stats-row" aria-live="polite">
+            <article class="stat-card">
+              <p class="stat-card__label">Total</p>
+              <p class="stat-card__value" id="stat-total">—</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-card__label">Active</p>
+              <p class="stat-card__value" id="stat-active">—</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-card__label">Selected</p>
+              <p class="stat-card__value" id="stat-selected">—</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-card__label">Rejected</p>
+              <p class="stat-card__value" id="stat-rejected">—</p>
+            </article>
+          </div>
+
+          <div class="filter-bar" id="filter-bar">
+            <div class="filter-bar__row filter-bar__row--inputs">
+              <input type="text" class="filter-bar__search filter-bar__input" id="filter-search" placeholder="Search name, email, phone..." aria-label="Search applications">
+              <select id="filter-status" class="filter-bar__select" aria-label="Filter by status (multi-select)" multiple>
+                <option value="New">New</option>
+                <option value="Screening">Screening</option>
+                <option value="Interview">Interview</option>
+                <option value="Offer">Offer</option>
+                <option value="Selected">Selected</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+              <select id="filter-notice-period" class="filter-bar__select" aria-label="Filter by notice period">
+                <option value="">Notice Period</option>
+                <option value="Immediate">Immediate</option>
+                <option value="15 days">15 days</option>
+                <option value="1 month">1 month</option>
+                <option value="2 months">2 months</option>
+              </select>
+              <select id="filter-starred" class="filter-bar__select" aria-label="Filter by starred">
+                <option value="">Starred</option>
+                <option value="all">All</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <select id="filter-assignee" class="filter-bar__select" aria-label="Filter by assignee">
+                <option value="">Assignee</option>
+                <option value="Unassigned">Unassigned</option>
+                <option value="Rahul Mehta">Rahul Mehta</option>
+                <option value="Sneha Reddy">Sneha Reddy</option>
+              </select>
+              <span class="filter-bar__range">
+                <label class="visually-hidden" for="filter-ai-min">AI Score min</label>
+                <input type="number" id="filter-ai-min" class="filter-bar__input filter-bar__input--number" min="0" max="100" placeholder="AI min" aria-label="AI score minimum">
+                <span class="filter-bar__range-sep" aria-hidden="true">–</span>
+                <label class="visually-hidden" for="filter-ai-max">AI Score max</label>
+                <input type="number" id="filter-ai-max" class="filter-bar__input filter-bar__input--number" min="0" max="100" placeholder="AI max" aria-label="AI score maximum">
+              </span>
+              <span class="filter-bar__range">
+                <label class="visually-hidden" for="filter-exp-min">Experience min (years)</label>
+                <input type="number" id="filter-exp-min" class="filter-bar__input filter-bar__input--number" min="0" placeholder="Exp min" aria-label="Experience minimum">
+                <span class="filter-bar__range-sep" aria-hidden="true">–</span>
+                <label class="visually-hidden" for="filter-exp-max">Experience max (years)</label>
+                <input type="number" id="filter-exp-max" class="filter-bar__input filter-bar__input--number" min="0" placeholder="Exp max" aria-label="Experience maximum">
+              </span>
+            </div>
+            <div class="filter-bar__row filter-bar__row--chips">
+              <div class="filter-bar__chips" id="filter-chips"></div>
+              <div class="filter-bar__actions">
+                <span class="filter-bar__badge" id="filter-count-badge" aria-live="polite">0</span>
+                <button type="button" class="btn btn--ghost filter-bar__clear" id="filter-clear-all">Clear all</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-controls">
+            <div class="table-controls__left">
+              <label class="bulk-checkbox-label">
+                <input type="checkbox" id="bulk-select-all" aria-label="Select all on page">
+                <span class="visually-hidden">Select all</span>
+              </label>
+              <div class="bulk-actions" id="bulk-actions">
+                <button type="button" class="btn btn--secondary btn--sm" id="bulk-move">Move</button>
+                <button type="button" class="btn btn--secondary btn--sm" id="bulk-reject">Reject</button>
+                <button type="button" class="btn btn--secondary btn--sm" id="bulk-assign">Assign</button>
+              </div>
+            </div>
+            <div class="table-controls__right">
+              <div class="dropdown" id="column-visibility-dropdown">
+                <button type="button" class="dropdown__trigger" id="column-visibility-trigger" aria-expanded="false" aria-haspopup="true">Columns</button>
+                <div class="dropdown__panel" id="column-visibility-panel" role="menu">
+                  <div class="dropdown__item" data-col="aiExtractionStatus">AI Extraction Status</div>
+                </div>
+              </div>
+              <div class="dropdown" id="density-dropdown">
+                <button type="button" class="dropdown__trigger" id="density-trigger" aria-expanded="false" aria-haspopup="true">Density</button>
+                <div class="dropdown__panel" id="density-panel" role="menu">
+                  <div class="dropdown__item" data-density="comfortable">Comfortable</div>
+                  <div class="dropdown__item" data-density="compact">Compact</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrapper" id="table-wrapper">
+            <table class="applications-table" id="applications-table" role="grid">
+              <thead>
+                <tr>
+                  <th scope="col"><input type="checkbox" id="th-select-all" aria-label="Select all"></th>
+                  <th scope="col"><button type="button" data-sort="candidateName">Name</button></th>
+                  <th scope="col"><button type="button" data-sort="totalExperience">Experience</button></th>
+                  <th scope="col"><button type="button" data-sort="noticePeriod">Notice Period</button></th>
+                  <th scope="col"><button type="button" data-sort="aiRelevancyScore">AI Score</button></th>
+                  <th scope="col"><button type="button" data-sort="assignee">Assignee</button></th>
+                  <th scope="col"><button type="button" data-sort="finalStatus">Final Status</button></th>
+                  <th scope="col" class="col--secondary" data-col="aiExtractionStatus">AI Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="applications-tbody"></tbody>
+            </table>
+          </div>
+
+          <div class="applications-cards" id="applications-cards" aria-label="Applications list (mobile view)"></div>
+
+          <div class="empty-state" id="empty-state">
+            <span class="empty-state__icon" aria-hidden="true">📋</span>
+            <h2 class="empty-state__title">No applications found</h2>
+            <p class="empty-state__message">Try adjusting your filters or clear all to see all applications.</p>
+            <button type="button" class="btn btn--primary" id="empty-state-clear-filters">Clear filters</button>
+          </div>
+
+          <div class="error-state" id="error-state">
+            <p class="error-state__message" id="error-state-message">Failed to load applications.</p>
+          </div>
+
+          <div class="pagination" id="pagination">
+            <div class="pagination__info" id="pagination-info">Showing 0–0 of 0</div>
+            <div class="pagination__controls">
+              <div class="pagination__page-size">
+                <label for="page-size-select">Per page</label>
+                <select id="page-size-select" aria-label="Rows per page">
+                  <option value="10">10</option>
+                  <option value="25" selected>25</option>
+                  <option value="50">50</option>
+                </select>
+              </div>
+              <button type="button" class="pagination__btn" id="pagination-prev" disabled>Previous</button>
+              <button type="button" class="pagination__btn" id="pagination-next" disabled>Next</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

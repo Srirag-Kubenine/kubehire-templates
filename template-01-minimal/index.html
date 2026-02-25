@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — KubeHire Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="app__noise" aria-hidden="true"></div>
+    <header class="navbar" role="banner">
+      <div class="navbar__left">
+        <button type="button" class="navbar__menu-btn" aria-expanded="false" aria-controls="sidebar" id="menu-btn" aria-label="Toggle menu">
+          <span class="navbar__menu-btn-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+        <a href="#" class="navbar__logo">KubeHire</a>
+      </div>
+      <div class="navbar__right">
+        <div class="navbar__user">
+          <button type="button" class="navbar__user-trigger" aria-expanded="false" aria-controls="user-dropdown" id="user-trigger">
+            <span class="navbar__avatar" aria-hidden="true">JD</span>
+            <span class="navbar__user-name">Jane Doe</span>
+          </button>
+          <div class="navbar__dropdown" id="user-dropdown" role="menu">
+            <a href="#" class="navbar__dropdown-item" role="menuitem">Profile</a>
+            <a href="#" class="navbar__dropdown-item" role="menuitem">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="app__body">
+      <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="sidebar__nav">
+          <a href="#" class="sidebar__item sidebar__item--active">
+            <span class="sidebar__icon" aria-hidden="true">▣</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="sidebar__item">
+            <span class="sidebar__icon" aria-hidden="true">◇</span>
+            <span>Jobs</span>
+          </a>
+          <a href="applications/index.html" class="sidebar__item">
+            <span class="sidebar__icon" aria-hidden="true">◎</span>
+            <span>Applications</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content" id="main-content">
+        <div class="main-content__inner">
+          <header class="page-header">
+            <p class="page-header__breadcrumb">Home / Dashboard</p>
+            <h1 class="page-header__title">Dashboard</h1>
+          </header>
+          <div class="card-grid">
+            <article class="card" style="--i: 0">
+              <h2 class="card__title">Active Jobs</h2>
+              <p class="card__value">24</p>
+            </article>
+            <article class="card" style="--i: 1">
+              <h2 class="card__title">Applications</h2>
+              <p class="card__value">156</p>
+            </article>
+            <article class="card" style="--i: 2">
+              <h2 class="card__title">Pending Review</h2>
+              <p class="card__value">12</p>
+            </article>
+            <article class="card" style="--i: 3">
+              <h2 class="card__title">Interviews Scheduled</h2>
+              <p class="card__value">8</p>
+            </article>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

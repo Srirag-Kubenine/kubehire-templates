@@ -1,0 +1,99 @@
+[
+  {
+    "id": 9,
+    "fullName": "Arpit Mittal 1",
+    "job": "DevOps Engineer - asd",
+    "email": "arpitmittal4@gmail.com",
+    "mobile": "9999999994",
+    "graduationYear": 2021,
+    "resumeUrl": "resumes/16669358472203165787/ad4bf003-8d88-4156-8809-ccec57b27b02.pdf",
+    "noticePeriod": "15 Days",
+    "currentCTC": 28.0,
+    "appliedAt": "2025-08-27T17:34:00",
+    "experience": 5.0,
+    "starred": false,
+    "aiRelevancyScore": 95,
+    "status": "Applied",
+    "assignee": "illias@kubenine.com",
+    "aiExtraction": {
+      "pros": [
+        "Extensive experience with AWS, GCP, and Azure cloud platforms.",
+        "Strong hands-on experience with Kubernetes and container orchestration.",
+        "Proven track record in DevOps and cloud migration projects.",
+        "Experience with CI/CD pipelines and infrastructure as code using Terraform and Ansible."
+      ],
+      "cons": [
+        "Limited information on specific achievements or outcomes in previous roles.",
+        "No explicit mention of experience with Oracle Cloud or IBM Cloud."
+      ],
+      "resume": {
+        "summary": "Seeking a creative & challenging DevOps and Multi Cloud role in an organization where I can enhance my technical skills and use best of my knowledge and experience to achieve client success and increase productivity.",
+        "projects": [
+          {
+            "title": "EKS Bottlerocket log collector script",
+            "description": "This is streamlined way for the customers to pull logs from there bottlerocket AMIs. This script creates a compressed archive containing all collected logs and diagnostic information, which can be used for analysis and troubleshoot the Kubernetes worker nodes. Technology used - AWS, Kubernetes, Shell Scripting, CLI commands."
+          },
+          {
+            "title": "EBS CSI analysis automation",
+            "description": "This automation analyzes EBS CSI driver configurations, rapidly identifies potential issues, and provides effective solutions for quick remediation. Technology used - AWS, Kubernetes, Shell Scripting, CLI commands."
+          },
+          {
+            "title": "Project Tracker AppSheet",
+            "description": "Developed an Appsheet application for industrial project tracking with automated email notifications for project timelines by implementing webhooks for API integration and real-time client status updates. Technology used - GCP, AppSheet, Webhooks, Google sheets."
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Tech - CSE",
+            "startDate": "2017-01-01",
+            "endDate": "2021-01-01",
+            "institution": "Dr. APJ Abdul Kalam Technical University"
+          }
+        ],
+        "workExperience": [
+          {
+            "company": "Amazon India",
+            "jobTitle": "DevOps Engineer I",
+            "startDate": "2022-05-01",
+            "endDate": null,
+            "cloudPlatforms": ["AWS"],
+            "description": "Primarily working on AWS managed Kubernetes EKS, managed docker Service ECS, AWS Batch. Hands on experience with troubleshooting Kubernetes clusters and other AWS integrated services..."
+          },
+          {
+            "company": "HashedIn By Deloitte",
+            "jobTitle": "DevOps Engineer",
+            "startDate": "2021-12-01",
+            "endDate": "2022-05-01",
+            "cloudPlatforms": ["AWS", "GCP"],
+            "description": "Closely working with SMEs and Manager to understand the client's requirement and implement accordingly..."
+          },
+          {
+            "company": "MediaAgility by Persistent Systems",
+            "jobTitle": "DevSecOps Engineer",
+            "startDate": "2021-03-01",
+            "endDate": "2021-12-01",
+            "cloudPlatforms": ["AWS", "Azure"],
+            "description": "Gained hands-on experience in cloud platforms (AWS/Azure), implementing scalable and secure deployment architectures..."
+          }
+        ]
+      }
+    },
+    "interviewNotes": [
+      {
+        "round": "AI Screening",
+        "notes": "Pros: Extensive cloud experience, strong Kubernetes skills. Cons: Limited info on Oracle/IBM Cloud experience.",
+        "createdAt": "2025-08-28T06:29:00"
+      },
+      {
+        "round": "Applied",
+        "notes": "",
+        "createdAt": "2026-02-25T01:42:00"
+      }
+    ]
+  },
+  {"id":"app-001","fullName":"Priya Sharma","job":"Software Engineer","email":"priya.sharma@email.com","mobile":"+91 98765 43210","graduationYear":2019,"noticePeriod":"1 month","currentCTC":"14 LPA","appliedAt":"2025-01-15T10:00:00","experience":5,"starred":true,"aiRelevancyScore":87,"status":"Interview","assignee":"Rahul Mehta","aiExtraction":{"pros":[],"cons":[],"resume":{"summary":"","projects":[],"education":[],"workExperience":[]}},"interviewNotes":[]},
+  {"id":"app-002","fullName":"Arjun Patel","job":"Software Engineer","email":"arjun.patel@email.com","mobile":"+91 91234 56789","graduationYear":2018,"noticePeriod":"15 days","currentCTC":"18 LPA","appliedAt":"2025-01-16T10:00:00","experience":6,"starred":true,"aiRelevancyScore":92,"status":"Offer","assignee":"Sneha Reddy","aiExtraction":{"pros":[],"cons":[],"resume":{"summary":"","projects":[],"education":[],"workExperience":[]}},"interviewNotes":[]},
+  {"id":"app-003","fullName":"Meera Krishnan","job":"Software Engineer","email":"meera.k@email.com","mobile":"+91 99887 66554","graduationYear":2021,"noticePeriod":"2 months","currentCTC":"10 LPA","appliedAt":"2025-01-17T10:00:00","experience":3,"starred":false,"aiRelevancyScore":45,"status":"Screening","assignee":"Rahul Mehta","aiExtraction":{"pros":[],"cons":[],"resume":{"summary":"","projects":[],"education":[],"workExperience":[]}},"interviewNotes":[]},
+  {"id":"app-004","fullName":"Vikram Singh","job":"Software Engineer","email":"vikram.singh@email.com","mobile":"+91 87654 32109","graduationYear":2016,"noticePeriod":"Immediate","currentCTC":"22 LPA","appliedAt":"2025-01-18T10:00:00","experience":8,"starred":true,"aiRelevancyScore":78,"status":"Selected","assignee":"Sneha Reddy","aiExtraction":{"pros":[],"cons":[],"resume":{"summary":"","projects":[],"education":[],"workExperience":[]}},"interviewNotes":[]},
+  {"id":"app-005","fullName":"Ananya Desai","job":"Software Engineer","email":"ananya.d@email.com","mobile":"+91 76543 21098","graduationYear":2022,"noticePeriod":"1 month","currentCTC":"9 LPA","appliedAt":"2025-01-19T10:00:00","experience":2,"starred":false,"aiRelevancyScore":0,"status":"New","assignee":"Unassigned","aiExtraction":{"pros":[],"cons":[],"resume":{"summary":"","projects":[],"education":[],"workExperience":[]}},"interviewNotes":[]}
+]

@@ -1,0 +1,76 @@
+/**
+ * Template 04 — Midnight
+ * Dark theme: blue-black base, slate sidebar, soft blue-grey accents.
+ */
+
+:root {
+  --color-bg-base: #0f1419;
+  --color-bg-surface: #1a2332;
+  --color-bg-elevated: #232f42;
+  --color-text-primary: #e8ecf0;
+  --color-text-secondary: #a8b5c4;
+  --color-text-muted: #6b7a8c;
+  --color-border: #2d3a4a;
+  --color-border-light: #364556;
+  --color-sidebar-bg: #141c28;
+  --color-sidebar-active-bg: #1e2a3a;
+  --color-sidebar-active-border: #5b8fb9;
+  --color-accent-subtle: #4a6a8a;
+  --color-accent: #5b8fb9;
+  --color-accent-muted: rgba(91, 143, 185, 0.2);
+  --color-overlay: rgba(0, 0, 0, 0.65);
+  --color-bg-filter: #1a2332;
+
+  /* Semantic — status / AI badges (Applications) */
+  --color-status-new: #6b7a8c;
+  --color-status-active: #5b8fb9;
+  --color-status-success: #4ade80;
+  --color-status-warning: #fbbf24;
+  --color-status-danger: #f87171;
+  --color-status-rejected: #94a3b8;
+  --color-ai-score-high: #4ade80;
+  --color-ai-score-mid: #fbbf24;
+  --color-ai-score-low: #f87171;
+  --color-ai-score-zero: #ef4444;
+
+  --font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-display: var(--font-family);
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  --navbar-height: 56px;
+  --sidebar-width: 260px;
+  --main-max-width: 1400px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  --transition-duration: 250ms;
+  --transition-ease: ease-out;
+
+  --bp-sm: 600px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}
